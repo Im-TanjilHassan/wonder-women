@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Riview.css'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -12,11 +12,17 @@ import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import emma from '../../../images/review user/emma.jpg'
 import ReviewBox from './review box/ReviewBox';
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Review = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 1700 })
+    }, [])
+
     return (
-        <div className='review'>
+        <div data-aos="zoom-in" className='review'>
             <h2 className='sectionTitle'>People's Review</h2>
             <Container>
                 <div>
@@ -105,6 +111,7 @@ const Review = () => {
                     <ReviewBox />
                 </div>
             </Container >
+            <hr className='section-break' />
         </div >
     );
 };

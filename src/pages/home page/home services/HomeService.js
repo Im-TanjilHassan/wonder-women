@@ -1,5 +1,6 @@
 import { Container } from '@mui/material';
 import * as React from 'react';
+import { useEffect } from 'react';
 import './HomeService.css'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -8,6 +9,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 import hairCut from '../../../images/serviceimg/hairandskincarepic/hairCut.jpg'
 import skinCare from '../../../images/serviceimg/hairandskincarepic/skinCare.jpg'
@@ -86,15 +89,21 @@ const nailAndSpa = [
 
 const HomeService = () => {
 
+    useEffect(() => {
+        Aos.init({ duration: 1500 })
+    }, [])
+
     return (
-        <div className='homeServices'>
+        <div data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className='homeServices'>
             <Container>
                 <h2 className='sectionTitle'>Our Services</h2>
                 <p className='serviceText'>we provide the best services ever. There are various service u can have here are some most popular services:</p>
 
                 <div>
                     <h3> <u>Hair & Skin Care</u> </h3>
-                    <Box sx={{ flexGrow: 1 }}>
+                    <Box data-aos="zoom-in-right" sx={{ flexGrow: 1 }}>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                             {hairSkinCare.map((care, index) => (
                                 <Grid item xs={2} sm={4} md={4} key={index}>
@@ -121,7 +130,7 @@ const HomeService = () => {
                         </Grid>
                     </Box>
                     <h3 className='rightSide-title'> <u>Nail & Spa</u> </h3>
-                    <Box sx={{ flexGrow: 1 }}>
+                    <Box data-aos="zoom-in-left" sx={{ flexGrow: 1 }}>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                             {nailAndSpa.map((care, index) => (
                                 <Grid item xs={2} sm={4} md={4} key={index}>

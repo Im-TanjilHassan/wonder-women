@@ -1,5 +1,4 @@
 .review{
-    margin-bottom: 5%;
     background-image: url('../../../images/aboutus/sec-bg.png');
     background-position: center;
     background-size: cover;
@@ -22,4 +21,3 @@
     border-radius: 50%;
 }
 
-/* rgb(250, 66, 97) */

@@ -1,0 +1,21 @@
+.footer{
+    padding: 5%;
+}
+
+.footer-title{
+    color: rgb(250, 66, 97);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.bottom-footer{
+    background-color: rgb(250, 66, 97);
+    color: white;
+    text-align: center;
+}
+
+.copyright{
+    margin-bottom: 0%;
+}
+
+/* rgb(250, 66, 97) */

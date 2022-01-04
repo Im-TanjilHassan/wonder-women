@@ -6,7 +6,7 @@ const ReviewBox = () => {
     return (
         <Container>
             <p className='text'>Write about your experience with us:</p>
-            <form>
+            <form className='form'>
                 <input className='mailInput' type="email" placeholder='Email' />
                 <br />
                 <textarea className='reviewArea' placeholder='Review' name="review" cols="30" rows="10"></textarea>

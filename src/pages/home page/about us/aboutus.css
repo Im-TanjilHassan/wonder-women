@@ -23,7 +23,7 @@
     background: rgba(255, 255, 255, 0.363);
 }
 
-img{
+.aboutusImg{
     width: 500px;
     border-radius: 10px;
 }
@@ -33,7 +33,7 @@ h3{
     color: rgb(250, 66, 97);
 }
 
-p{
+.aboutText{
     margin-bottom: 4%;
 }
 
@@ -46,18 +46,18 @@ p{
     box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
 }
 
-i{
+.fas{
     margin-left: 6px;
 }
 
-.readmoreBtn:hover i{
+.readmoreBtn:hover .fas{
     transform: translate(2px);
     transition:.5s ease;
 }
 
 
 @media only screen and (max-width: 688px) {
-    img{
+    .aboutusImg{
         width: 100%;
     }
 }
