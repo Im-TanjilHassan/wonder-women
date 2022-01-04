@@ -1,0 +1,64 @@
+.sampleService{
+    margin-bottom: 5%;
+    background-image: url('../../../images/aboutus/sec-bg.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.sectionTitle{
+    font-size: 30px;
+    text-align: center;
+    color: rgb(250, 66, 97);
+    margin-bottom: 8%;
+    padding: 5px;
+}
+
+.sectionTitle::after{
+    margin: auto;
+    border-radius: 10px;
+    content: '';
+    display: block;
+    height: 4px;
+    width: 80px;
+    background: rgba(255, 255, 255, 0.363);
+}
+
+img{
+    width: 500px;
+    border-radius: 10px;
+}
+
+h3{
+    margin-bottom: 3%;
+    color: rgb(250, 66, 97);
+}
+
+p{
+    margin-bottom: 4%;
+}
+
+.readmoreBtn{
+    background-color: rgb(250, 66, 97) !important;
+     
+}
+
+.readmoreBtn:hover{
+    box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
+}
+
+i{
+    margin-left: 6px;
+}
+
+.readmoreBtn:hover i{
+    transform: translate(2px);
+    transition:.5s ease;
+}
+
+
+@media only screen and (max-width: 688px) {
+    img{
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,55 @@
+.banner{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.6)) ,url('../../../images/banner/banner1.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    min-height: 80vh;
+    margin-bottom: 10%;
+}
+
+
+.textArea{
+    text-align: center;
+    padding-top: 10%;
+}
+
+h3{
+    font-size: 150%;
+}
+
+h1{
+    font-size: 500%;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(../../../images/banner/back1.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+
+.social{
+    text-align: center;
+    margin-top: 9%;
+}
+
+.socialLink{
+    color: rgb(230, 41, 72);
+}
+
+.fab{
+    font-size: 25px;
+    margin: 1%;
+}
+
+.fab:hover{
+    transform: scale(1.3);
+        transition: transform .3s ease-out;
+}
+
+

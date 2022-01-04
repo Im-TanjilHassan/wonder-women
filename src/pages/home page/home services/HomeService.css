@@ -1,0 +1,29 @@
+.homeServices{
+    margin-bottom: 5%;
+    background-image: url('../../../images/aboutus/sec-bg.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.serviceText{
+    font-size: 20px;
+}
+
+.card{
+
+    opacity: calc(0.6);
+    margin-bottom: 12%;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    background-color: rgb(250, 66, 97);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.rightSide-title{
+    float: right;
+    margin-right: 2%;
+}
+

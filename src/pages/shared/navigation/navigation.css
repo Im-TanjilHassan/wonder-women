@@ -1,0 +1,35 @@
+.mobMenu{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    width: 500px;
+    height: 24px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.logo{
+    width: 50px;
+}
+
+.menuLink{
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.menuBtn{
+    color: white !important;
+    font-size: 17px !important;
+}
+
+.menuBtn:hover{
+    transform: scale(1.2);
+    transition: .6s;
+    font-weight: bold;
+}
+
+.deskMenu{
+    width: 200px;
+    font-weight: bold !important;
+}
+
