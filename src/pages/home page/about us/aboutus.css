@@ -38,12 +38,14 @@ h3{
 }
 
 .readmoreBtn{
-    background-color: rgb(250, 66, 97) !important;
+    border: 1px solid rgb(250, 66, 97) !important;
+    background-color: black !important;
      
 }
 
 .readmoreBtn:hover{
     box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
+    background-color: rgb(250, 66, 97) !important;
 }
 
 .fas{

@@ -19,6 +19,7 @@ import hairCare from '../../../images/serviceimg/hairandskincarepic/hairCare.jpg
 import nailPolish from '../../../images/serviceimg/nailpolishAndSpa/nailPolish.jpg'
 import spa from '../../../images/serviceimg/nailpolishAndSpa/spa.jpg'
 import nailCare from '../../../images/serviceimg/nailpolishAndSpa/nailCare.jpg'
+import { Link } from 'react-router-dom';
 
 // import bride1 from '../../../images/serviceimg/bride/bride3.jpeg'
 // import bride2 from '../../../images/serviceimg/bride/bride1.jpg'
@@ -107,24 +108,26 @@ const HomeService = () => {
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                             {hairSkinCare.map((care, index) => (
                                 <Grid item xs={2} sm={4} md={4} key={index}>
-                                    <Card className='card' sx={{ maxWidth: 345 }}>
-                                        <CardActionArea>
-                                            <CardMedia
-                                                component="img"
-                                                height="140"
-                                                image={care.img}
-                                                alt="Hair and Skin care"
-                                            />
-                                            <CardContent>
-                                                <Typography gutterBottom variant="h5" component="div">
-                                                    {care.title}
-                                                </Typography>
-                                                <Typography variant="body2" color="text.secondary">
-                                                    {care.description}
-                                                </Typography>
-                                            </CardContent>
-                                        </CardActionArea>
-                                    </Card>
+                                    <Link className='service-link' to={`/booking/${care.id}`}>
+                                        <Card className='card' sx={{ maxWidth: 345 }}>
+                                            <CardActionArea>
+                                                <CardMedia
+                                                    component="img"
+                                                    height="140"
+                                                    image={care.img}
+                                                    alt="Hair and Skin care"
+                                                />
+                                                <CardContent>
+                                                    <Typography gutterBottom variant="h5" component="div">
+                                                        {care.title}
+                                                    </Typography>
+                                                    <Typography variant="body2" color="text.secondary">
+                                                        {care.description}
+                                                    </Typography>
+                                                </CardContent>
+                                            </CardActionArea>
+                                        </Card>
+                                    </Link>
                                 </Grid>
                             ))}
                         </Grid>
@@ -134,24 +137,26 @@ const HomeService = () => {
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                             {nailAndSpa.map((care, index) => (
                                 <Grid item xs={2} sm={4} md={4} key={index}>
-                                    <Card className='card' sx={{ maxWidth: 345 }}>
-                                        <CardActionArea>
-                                            <CardMedia
-                                                component="img"
-                                                height="140"
-                                                image={care.img}
-                                                alt="Hair and Skin care"
-                                            />
-                                            <CardContent>
-                                                <Typography gutterBottom variant="h5" component="div">
-                                                    {care.title}
-                                                </Typography>
-                                                <Typography variant="body2" color="text.secondary">
-                                                    {care.description}
-                                                </Typography>
-                                            </CardContent>
-                                        </CardActionArea>
-                                    </Card>
+                                    <Link className='service-link' to={`/booking/${care.id}`}>
+                                        <Card className='card' sx={{ maxWidth: 345 }}>
+                                            <CardActionArea>
+                                                <CardMedia
+                                                    component="img"
+                                                    height="140"
+                                                    image={care.img}
+                                                    alt="Hair and Skin care"
+                                                />
+                                                <CardContent>
+                                                    <Typography gutterBottom variant="h5" component="div">
+                                                        {care.title}
+                                                    </Typography>
+                                                    <Typography variant="body2" color="text.secondary">
+                                                        {care.description}
+                                                    </Typography>
+                                                </CardContent>
+                                            </CardActionArea>
+                                        </Card>
+                                    </Link>
                                 </Grid>
                             ))}
                         </Grid>

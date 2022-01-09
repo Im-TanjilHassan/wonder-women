@@ -1,0 +1,107 @@
+.login-page{
+    background-image: url('../../../images/logo/logo-removebg-preview.png');
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding-top: 5%;
+}
+
+.login-form{
+    
+    border: 2px solid rgb(235, 66, 94);
+    width: 50%;
+    height: 500px;
+    margin: auto auto;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 25px 0;
+}
+
+.form-filed{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.login-form h2{
+    margin-bottom: 5%;
+}
+
+.input-field{
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.login-Btn{
+    border: 1px solid rgb(235, 66, 94) !important;
+    width: 40%;
+    color: white !important;
+}
+
+.login-Btn:hover{
+    background-color: rgb(235, 66, 94) !important;
+    box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
+}
+
+.login-logo{
+    width: 50px;
+    border-radius: 20%;
+    border: 1px solid rgb(250, 66, 97) !important;
+    
+}
+
+.login-logo:hover{
+    box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+
+.route-link{
+    cursor: pointer;
+    text-decoration: none !important;
+    color: rgb(250, 66, 97) !important;
+    font-size: 18px;
+    text-align: center;
+}
+
+.spinner{
+    color: rgb(250, 66, 97) !important;
+    margin-bottom: 10px;
+}
+
+.alert{
+    color: white !important;
+    width: 80%;
+    margin: 15px auto;
+    background-color: black !important;
+    border: 1px solid rgb(250, 66, 97) !important;
+}
+
+/* box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important; */
+/* rgb(250, 66, 97) */
+
+@media only screen and (max-width: 688px) {
+
+    .login-page{
+        
+        padding-top: 5%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .login-form{
+        background-image: linear-gradient(rgba(48, 11, 19, 0.6), rgba(55, 78, 153, 0.6)), url('../../../images/logo/logo-removebg-preview.png');
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: auto;
+        width: 100%;
+    }
+
+    .input-field{
+        width: 75%;
+    }
+}

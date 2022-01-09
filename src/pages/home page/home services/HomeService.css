@@ -9,6 +9,10 @@
     font-size: 20px;
 }
 
+.service-link{
+    text-decoration: none;
+}
+
 .card{
 
     opacity: calc(0.6);

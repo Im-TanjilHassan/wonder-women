@@ -14,13 +14,16 @@ import MenuItem from '@mui/material/MenuItem';
 import logo from '../../../images/logo/logo1.png'
 import { Link } from 'react-router-dom';
 import '../navigation/navigation.css'
+import useAuth from '../../../hooks/useAuth';
+import { CircularProgress } from '@mui/material';
 
 const pages = ['Services', 'Products', 'About Us'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navigation = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+    const { user, logout, loading } = useAuth()
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -106,11 +109,23 @@ const Navigation = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </IconButton>
-                        </Tooltip>
+                        {user?.email ?
+                            <Tooltip title="Open settings">
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                </IconButton>
+                            </Tooltip>
+                            :
+                            <Box sx={{ float: 'right' }}>
+                                <Link to='/login' className='menuLink'>
+                                    <Button className='menuBtn' variant="text">Log-In</Button>
+                                </Link>
+                                <Link to='/register' className='menuLink'>
+                                    <Button className='menuBtn' variant="text">Register</Button>
+                                </Link>
+                                <Typography>{user.email}</Typography>
+                            </Box>
+                        }
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
@@ -127,15 +142,25 @@ const Navigation = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                                    <Typography className='deskMenu' textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
+                            {loading ?
+                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                                    <CircularProgress className='spinner' />
+                                    <Typography variant='p'>Wait a sec...</Typography>
+                                </Box>
+                                :
+                                <Box className='deskMenu' onClick={handleCloseUserMenu}>
+                                    <Link to='/profile' className='user-menuLink'>
+                                        <Typography className='user-menu'>Profile</Typography>
+                                    </Link>
+                                    <Link to='/dashboard' className='user-menuLink'>
+                                        <Typography className='user-menu'>Dashboard</Typography>
+                                    </Link>
+                                    <Typography className='user-menu' onClick={logout}>Log-out</Typography>
+                                </Box>}
                         </Menu>
                     </Box>
-                </Toolbar>
-            </Container>
+                </Toolbar >
+            </Container >
         </AppBar >
     );
 };
