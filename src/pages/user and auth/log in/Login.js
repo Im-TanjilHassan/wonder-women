@@ -6,16 +6,18 @@ import React, { useState } from 'react';
 import './Lgoin.css'
 import googleLogo from '../../../images/logo/googleLogo.png'
 import facebookLogo from '../../../images/logo/fb.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import useAuth from '../../../hooks/useAuth';
 
 
 const Login = () => {
 
-    const { login, error, user, loading } = useAuth()
+    const { login, error, user, loading, signInWithGoogle } = useAuth()
     const [userInfo, setUserInfo] = useState({})
-    const [alertBox, setAlertBox] = useState(null)
+
+    const location = useLocation()
+    const navigate = useNavigate()
 
 
     const handleOnBlur = (e) => {
@@ -29,12 +31,14 @@ const Login = () => {
     }
 
     const handleLogIn = e => {
-        login(userInfo.email, userInfo.password)
-        if (error) {
-            alert(error)
-        }
+        login(userInfo.email, userInfo.password, location, navigate)
         e.preventDefault()
     }
+
+    const googleLogin = () => {
+        signInWithGoogle(location, navigate)
+    }
+
 
     return (
         <Container>
@@ -66,13 +70,14 @@ const Login = () => {
                                 label="Password"
                                 variant="filled"
                             />
-                            <Button className='login-Btn' type='submit' variant='text'>Log-in</Button>
-                            <p>- - - - - - OR - - - - - -</p>
+                            <Button className='submit-Btn' type='submit' variant='text'>Log-in</Button>
+                            <p>- - - - - - OR Log-In with - - - - - -</p>
                             <Box sx={{ flexGrow: 1 }}>
-                                <Grid sx={{ mb: '8%' }} container spacing={2}>
+                                <Grid sx={{ mb: '8%' }} container spacing={5}>
                                     <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} item xs={6} md={6}>
-                                        <img className='login-logo' src={googleLogo} alt="google logo" />
+                                        <img className='login-logo' onClick={googleLogin} src={googleLogo} alt="google logo" />
                                     </Grid>
+
                                     <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} item xs={6} md={6}>
                                         <img className='login-logo' src={facebookLogo} alt="facebook logo" />
                                     </Grid>
@@ -80,11 +85,11 @@ const Login = () => {
                             </Box>
                             <Link className='route-link' to='/register'><p>Don't have an account? Please Register</p></Link>
                         </div>}
-                    {user.email &&
-                        <Alert onClose={() => { }} severity="success" className='alert'>Log-In successful!</Alert>
+                    {user?.email &&
+                        <Alert severity="success" className='alert'>Log-In success!</Alert>
                     }
                     {error &&
-                        <Alert onClose={() => { }} severity="error" className='alert'>{error}!</Alert>
+                        <Alert severity="error" className='alert'>{error}!</Alert>
                     }
                 </form>
 

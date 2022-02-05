@@ -1,7 +1,7 @@
-import { Button, Container, TextField } from '@mui/material';
+import { Alert, Button, Container, TextField } from '@mui/material';
 import React from 'react';
 import './Register.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
@@ -12,6 +12,8 @@ const Register = () => {
 
     const [userInfo, setUserInfo] = useState({})
     const { register, error, user, loading } = useAuth()
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleOnBlur = (e) => {
 
@@ -28,10 +30,7 @@ const Register = () => {
             alert("Password didn't match")
             return
         }
-        else {
-            alert('register success')
-        }
-        register(userInfo.email, userInfo.password)
+        register(userInfo.email, userInfo.password, location, navigate)
         e.preventDefault()
 
     }
@@ -49,6 +48,15 @@ const Register = () => {
                         </Box>
                         :
                         <div className='form-filed'>
+                            <TextField
+                                className='input-field'
+                                type='text'
+                                id="filled-basic"
+                                label="Your Name"
+                                name='name'
+                                onBlur={handleOnBlur}
+                                variant="filled"
+                            />
                             <TextField
                                 className='input-field'
                                 type='email'
@@ -76,10 +84,16 @@ const Register = () => {
                                 onBlur={handleOnBlur}
                                 variant="filled"
                             />
-                            <Button className='login-Btn' type='submit' variant='text'>Register</Button>
+                            <Button className='submit-Btn' type='submit' variant='text'>Register</Button>
                             {error ? <p>error.massage</p> : ''}
                             <Link className='route-link' to='/login'>Already have an account? Please Log-In</Link>
                         </div>}
+                    {user?.email &&
+                        <Alert severity="success" className='alert'>Registration successful!</Alert>
+                    }
+                    {error &&
+                        <Alert severity="error" className='alert'>{error}!</Alert>
+                    }
                 </form>
             </div>
         </Container>

@@ -1,0 +1,11 @@
+.service-card{
+    opacity: calc(0.7);
+    margin-bottom: 12%;
+    transition: transform .3s ease-out; 
+}
+
+.service-card:hover{
+    transform: scale(1.05);
+    border: 3px solid rgb(250, 66, 97);
+    color: black;
+}

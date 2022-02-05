@@ -155,6 +155,9 @@ const Navigation = () => {
                                     <Link to='/dashboard' className='user-menuLink'>
                                         <Typography className='user-menu'>Dashboard</Typography>
                                     </Link>
+                                    <Link to='/addService' className='user-menuLink'>
+                                        <Typography className='user-menu'>Add New Service</Typography>
+                                    </Link>
                                     <Typography className='user-menu' onClick={logout}>Log-out</Typography>
                                 </Box>}
                         </Menu>

@@ -34,21 +34,23 @@
     border-radius: 10px;
 }
 
-.login-Btn{
+.submit-Btn{
     border: 1px solid rgb(235, 66, 94) !important;
     width: 40%;
     color: white !important;
 }
 
-.login-Btn:hover{
+.submit-Btn:hover{
     background-color: rgb(235, 66, 94) !important;
     box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
 }
+
 
 .login-logo{
     width: 50px;
     border-radius: 20%;
     border: 1px solid rgb(250, 66, 97) !important;
+    margin-right: 8%;
     
 }
 

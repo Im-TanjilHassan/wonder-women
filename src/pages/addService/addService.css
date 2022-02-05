@@ -1,0 +1,65 @@
+.container{
+    margin: 5% 0;
+}
+
+.title{
+    text-align: center;
+    font-size: 35px;
+    color: #e63e70;
+    margin-bottom: 5%;
+}
+
+.note{
+    font-size: 18px;
+    margin-bottom: 8%;
+}
+
+.note a{
+    text-decoration: none;
+    color: #e63e70;
+}
+
+.add-service{
+    width: 80%;
+    border: 2px solid #e63e70;
+    margin: 3% auto;
+    padding: 10px;
+}
+
+.add-service h3{
+    text-align: center;
+    margin: 10px 0 4% 0;
+}
+
+.service-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 3%;
+}
+
+.service-form input, textarea{
+    padding: 15px;
+    width: 50%;
+    margin-bottom: 3%;
+    font-size: 18px;
+}
+
+.submit-btn{
+    width: 40%;
+}
+
+@media screen and (max-width:688px) {
+
+    .add-service{
+        width: 100%;
+    }
+
+    .service-form input, textarea{
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-bottom: 7%;
+    }
+}

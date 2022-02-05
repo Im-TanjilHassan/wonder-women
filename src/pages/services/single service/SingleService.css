@@ -1,0 +1,41 @@
+.service-title{
+    margin-top: 6%;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(250, 66, 97);
+    margin-bottom: 8%;
+    padding: 5px;
+}
+
+.service-title::after{
+    margin: auto;
+    border-radius: 10px;
+    content: '';
+    display: block;
+    height: 4px;
+    width: 80px;
+    background: rgba(255, 255, 255, 0.363);
+}
+
+.service-detail p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.service-detail span{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.booking{
+    border: 1px solid rgb(235, 66, 94) !important;
+    width: 40%;
+    color: white !important;
+}
+
+.booking:hover{
+    background-color: rgb(235, 66, 94) !important;
+    box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
+}
+
+/* rgb(250, 66, 97) */
