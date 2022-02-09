@@ -1,0 +1,26 @@
+.bookingDetail{
+    width: 100% !important;
+    margin-bottom: 4% !important;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.booking-title{
+    color: rgb(235, 66, 94);
+    margin-bottom: 4% !important;
+    text-align: center;
+    font-weight: bold !important;
+
+}
+
+.book-btn{
+    border: 1px solid rgb(235, 66, 94) !important;
+    width: 40%;
+    color: white !important;
+    background-color: black !important;
+}
+
+.book-btn:hover{
+    background-color: rgb(235, 66, 94) !important;
+    box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
+}

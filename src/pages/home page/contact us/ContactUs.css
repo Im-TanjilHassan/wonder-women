@@ -1,0 +1,58 @@
+.contact-compo{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.904), rgba(0, 0, 0, 0.904)) ,url('../../../images/banner/contactus.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.contact-us{
+    padding-top: 5%;
+    color: rgb(250, 66, 97);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: bold !important;
+}
+
+.sub-title{
+    color: white;
+    text-align: center;
+    margin-bottom: 8% !important;
+}
+
+.sub-title::after{
+    margin: auto;
+    border-radius: 10px;
+    content: '';
+    display: block;
+    height: 4px;
+    width: 80px;
+    background: rgba(255, 255, 255, 0.363);
+}
+
+.contact-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8%;
+}
+
+.text-field{
+    width: 100%;
+    margin-bottom: 4% !important;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.msg-submit-btn{
+    background-color: rgba(0, 0, 0, 0) !important;
+    border: 1px solid rgb(250, 66, 97) !important;
+    margin: auto !important;
+    width: 50%;
+}
+
+.msg-submit-btn:hover{
+    background-color: rgb(250, 66, 97) !important;
+    box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
+}

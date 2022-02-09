@@ -5,6 +5,7 @@ import './SingleService.css'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Calender from '../../shared/calender/Calender'
+import BookingModal from './bookingModal/BookingModal';
 
 const SingleService = () => {
     const { serviceId } = useParams()
@@ -12,20 +13,28 @@ const SingleService = () => {
     const [service, setService] = useState('')
     const [date, setDate] = React.useState(new Date());
 
+    // to load single data
     useEffect(() => {
         fetch(`http://localhost:5000/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
 
-    const { title, imgUrl, description, price, specialist } = service
+    // destructuring data
+    const { title, description, price, specialist } = service
+
+    // modal open and close function
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     return (
         <Container>
             <div>
                 <h2 className='service-title'>{title}</h2>
 
-                <Box sx={{ flexGrow: 1, pb: '5%' }}>
+                {/* service information */}
+                <Box sx={{ flexGrow: 1, pb: '5%', mb: '10%' }}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={6}>
                             <Calender date={date} setDate={setDate} />
@@ -35,12 +44,18 @@ const SingleService = () => {
                                 <p>{description}</p>
                                 <p>Specialist: <span>{specialist}</span></p>
                                 <p>Price: $<span>{price}</span> </p>
-                                <Button variant='text' className='booking'>Book Appointment</Button>
+                                <Button variant='text' onClick={handleOpen} className='booking'>Book Appointment</Button>
                             </div>
                         </Grid>
                     </Grid>
                 </Box>
-
+                {/*  modal component */}
+                <BookingModal
+                    date={date}
+                    service={service}
+                    open={open}
+                    handleClose={handleClose}
+                ></BookingModal>
 
             </div>
         </Container>

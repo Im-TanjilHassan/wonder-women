@@ -96,7 +96,7 @@
     }
 
     .login-form{
-        background-image: linear-gradient(rgba(48, 11, 19, 0.6), rgba(55, 78, 153, 0.6)), url('../../../images/logo/logo-removebg-preview.png');
+        /* background-image: linear-gradient(rgba(48, 11, 19, 0.6), rgba(55, 78, 153, 0.6)), url('../../../images/logo/logo-removebg-preview.png'); */
         background-position: center left;
         background-repeat: no-repeat;
         background-size: auto;

@@ -111,7 +111,6 @@ const Review = () => {
                     <ReviewBox />
                 </div>
             </Container >
-            <hr className='section-break' />
         </div >
     );
 };

@@ -12,6 +12,7 @@ const Register = () => {
 
     const [userInfo, setUserInfo] = useState({})
     const { register, error, user, loading } = useAuth()
+    const [missPass, setMissPass] = useState('')
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -22,23 +23,27 @@ const Register = () => {
 
         const newLogInData = { ...userInfo }
         newLogInData[inputField] = value
+        console.log(newLogInData)
         setUserInfo(newLogInData)
     }
+
+
     const handleRegistration = (e) => {
 
+        e.preventDefault()
         if (userInfo.password !== userInfo.password2) {
-            alert("Password didn't match")
+            const alert = "Password didn't match"
+            setMissPass(alert)
             return
         }
-        register(userInfo.email, userInfo.password, location, navigate)
-        e.preventDefault()
+        register(userInfo.email, userInfo.password, userInfo.name, userInfo.image, location, navigate)
 
     }
 
     return (
         <Container>
-            <div className='login-page'>
-                <form className='login-form' onSubmit={handleRegistration}>
+            <div className='registration-page'>
+                <form className='registration-form' onSubmit={handleRegistration}>
                     {user?.email ? <h2>{user.email}</h2> : <h2>Register</h2>}
                     {loading ?
 
@@ -51,7 +56,7 @@ const Register = () => {
                             <TextField
                                 className='input-field'
                                 type='text'
-                                id="filled-basic"
+                                id="filled-basic0"
                                 label="Your Name"
                                 name='name'
                                 onBlur={handleOnBlur}
@@ -84,8 +89,19 @@ const Register = () => {
                                 onBlur={handleOnBlur}
                                 variant="filled"
                             />
+                            {/* <div className='file-upload-div'>
+                                <input
+                                    type="file"
+                                    name="profileImg"
+                                    onBlur={handleFileTypeInput}
+                                    accept='image/*'
+                                    id='file'
+                                />
+                                <label className='file-upload-lable' htmlFor="file">profile picture:</label>
+                            </div> */}
                             <Button className='submit-Btn' type='submit' variant='text'>Register</Button>
                             {error ? <p>error.massage</p> : ''}
+                            {missPass && <Alert severity="error" className='alert'>{missPass}!</Alert>}
                             <Link className='route-link' to='/login'>Already have an account? Please Log-In</Link>
                         </div>}
                     {user?.email &&

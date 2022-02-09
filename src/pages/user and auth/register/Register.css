@@ -1,0 +1,52 @@
+.registration-page{
+    background-image: url('../../../images/logo/logo-removebg-preview.png');
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding: 5% 0;
+    
+}
+
+.registration-form{
+    border: 2px solid rgb(235, 66, 94);
+    width: 50%;
+    height: auto;
+    margin: auto auto;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 25px 0;
+}
+
+.registration-form h2{
+    margin-bottom: 5%;
+}
+
+.file-upload-div{
+    position: relative;
+    width: 50%;
+}
+
+input[type='file']{
+    margin-left: 10%;
+    background-color: white;
+    width: 90%;
+    color: rgb(75, 73, 73);
+    padding: 13px 50px 13px 13px; 
+    border-radius: 10px;
+}
+
+.file-upload-lable{
+    color: rgb(83, 82, 82);
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    padding: 10px 10px 10px 21px;
+}
+
+@media only screen and (max-width: 688px) {
+    .registration-form{
+        width: 100%;
+    }
+}

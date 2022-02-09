@@ -1,5 +1,5 @@
 import initFirebase from "../pages/user and auth/firebase auth/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 initFirebase();
@@ -14,7 +14,7 @@ const useFirebase = () => {
 
 
     // email-pass register
-    const register = (email, password, location, navigate) => {
+    const register = (email, password, name, profileUrl, location, navigate) => {
         setLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
@@ -23,6 +23,23 @@ const useFirebase = () => {
                 const direction = location?.state?.from || '/home'
                 navigate(direction)
                 setError('')
+
+                const newUser = { email, displayName: 'name' }
+                setUser(newUser)
+
+                // send name to firebase
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+                }).catch((error) => {
+                    // if any error come
+                    const errorMessage = error.message;
+                    setError(errorMessage)
+                });
+
+                // send user to saveUseToDatabase function it in below
+                saveUserToDatabase(email, name, 'POST')
+
 
             })
             .catch((error) => {
@@ -100,6 +117,18 @@ const useFirebase = () => {
             setError(errorMessage)
         })
             .finally(() => setLoading(false));
+    }
+
+    const saveUserToDatabase = (email, name, method) => {
+        const user = { email, name };
+
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
     }
 
     return {

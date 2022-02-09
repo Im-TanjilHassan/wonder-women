@@ -38,8 +38,8 @@ const HomeService = () => {
 
                 <div>
                     <h3> <u>Hair & Skin Care</u> </h3>
-                    <Box data-aos="zoom-in-right" sx={{ flexGrow: 1, height: '350px' }}>
-                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    <Box data-aos="zoom-in-right" sx={{ flexGrow: 1 }}>
+                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 3, sm: 3, md: 12 }}>
                             {services.map((service) => (
                                 <Grid item xs={2} sm={4} md={4} key={service._id}>
                                     {service.category === "hair and skin care" && (
@@ -52,8 +52,8 @@ const HomeService = () => {
                         </Grid>
                     </Box>
                     <h3 className='rightSide-title'> <u>Nail & Spa</u> </h3>
-                    <Box data-aos="zoom-in-left" sx={{ flexGrow: 1, height: '350px' }}>
-                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    <Box data-aos="zoom-in-left" sx={{ flexGrow: 1, mb: '15%' }}>
+                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 3, sm: 3, md: 12 }}>
                             {services.map((service) => (
                                 <Grid item xs={2} sm={4} md={4} key={service._id}>
                                     {service.category === "nail and spa" && (
