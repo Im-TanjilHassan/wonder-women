@@ -3,23 +3,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
-import { Button, Stack } from '@mui/material';
+import { Button, Container, Stack } from '@mui/material';
 import useAuth from '../../../../hooks/useAuth';
 import './bookingmodal.css'
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 600,
-    backgroundColor: 'black',
-    color: 'white',
-    border: '2px solid rgb(235, 66, 94)',
-    borderRadius: '10px',
-    boxShadow: 24,
-    p: 6,
-};
 
 const BookingModal = ({ open, handleClose, service, date }) => {
 
@@ -72,64 +59,66 @@ const BookingModal = ({ open, handleClose, service, date }) => {
     }
 
     return (
-        <div>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
-                <Box sx={style}>
-                    <Typography className='booking-title' id="modal-modal-title" variant="h6" component="h2">
-                        {title}
-                    </Typography>
-                    <form onSubmit={handleBookingSubmit} style={{ padding: '0 15px' }}>
-                        <TextField
-                            disabled
-                            className='bookingDetail'
-                            id="outlined-size-small"
-                            defaultValue='Available time 8am-10pm'
-                            size="small"
-                        />
-                        <TextField
-                            className='bookingDetail'
-                            id="outlined-size-small"
-                            onBlur={handleOnBlur}
-                            name='name'
-                            defaultValue={user.displayName}
-                            size="small"
-                        />
-                        <TextField
-                            className='bookingDetail'
-                            id="outlined-size-small"
-                            onBlur={handleOnBlur}
-                            name='phone'
-                            defaultValue='Phone Number'
-                            size="small"
-                        />
-                        <TextField
-                            className='bookingDetail'
-                            id="outlined-size-small"
-                            onBlur={handleOnBlur}
-                            name='email'
-                            defaultValue={user.email}
-                            size="small"
-                        />
-                        <TextField
-                            disabled
-                            className='bookingDetail'
-                            id="outlined-size-small"
-                            defaultValue={date.toDateString()}
-                            size="small"
-                        />
+        <Container>
+            <div >
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box className='modal'>
+                        <Typography className='booking-title' id="modal-modal-title" variant="h6" component="h2">
+                            {title}
+                        </Typography>
+                        <form onSubmit={handleBookingSubmit} style={{ padding: '0 15px' }}>
+                            <TextField
+                                disabled
+                                className='bookingDetail'
+                                id="outlined-size-small"
+                                defaultValue='Available time 8am-10pm'
+                                size="small"
+                            />
+                            <TextField
+                                className='bookingDetail'
+                                id="outlined-size-small"
+                                onBlur={handleOnBlur}
+                                name='name'
+                                defaultValue={user.displayName}
+                                size="small"
+                            />
+                            <TextField
+                                className='bookingDetail'
+                                id="outlined-size-small"
+                                onBlur={handleOnBlur}
+                                name='phone'
+                                defaultValue='Phone Number'
+                                size="small"
+                            />
+                            <TextField
+                                className='bookingDetail'
+                                id="outlined-size-small"
+                                onBlur={handleOnBlur}
+                                name='email'
+                                defaultValue={user.email}
+                                size="small"
+                            />
+                            <TextField
+                                disabled
+                                className='bookingDetail'
+                                id="outlined-size-small"
+                                defaultValue={date.toDateString()}
+                                size="small"
+                            />
 
-                        <Stack spacing={2} direction="row" sx={{ display: 'flex', justifyContent: 'center' }}>
-                            <Button type='submit' className='book-btn' variant="contained">Book</Button>
-                        </Stack>
-                    </form>
-                </Box>
-            </Modal>
-        </div>
+                            <Stack spacing={2} direction="row" sx={{ display: 'flex', justifyContent: 'center' }}>
+                                <Button type='submit' className='book-btn' variant="contained">Book</Button>
+                            </Stack>
+                        </form>
+                    </Box>
+                </Modal>
+            </div>
+        </Container>
     );
 };
 

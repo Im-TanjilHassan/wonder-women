@@ -1,5 +1,4 @@
 .homeServices{
-    margin-bottom: 5%;
     background-image: url('../../../images/aboutus/sec-bg.png');
     background-position: center;
     background-size: cover;
@@ -13,10 +12,16 @@
     text-decoration: none;
 }
 
-
+.leftSide-title{
+    color: rgb(250, 66, 97);
+    margin-bottom: 2%;
+    font-size: 22px;
+}
 
 .rightSide-title{
     float: right;
     margin-right: 2%;
+    color: rgb(250, 66, 97);
+    font-size: 22px;
 }
 

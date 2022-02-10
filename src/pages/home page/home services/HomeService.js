@@ -37,7 +37,7 @@ const HomeService = () => {
                 <p className='serviceText'>we provide the best services ever. There are various service u can have here are some most popular services:</p>
 
                 <div>
-                    <h3> <u>Hair & Skin Care</u> </h3>
+                    <h3 className='leftSide-title'>Hair & Skin Care</h3>
                     <Box data-aos="zoom-in-right" sx={{ flexGrow: 1 }}>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 3, sm: 3, md: 12 }}>
                             {services.map((service) => (
@@ -51,7 +51,7 @@ const HomeService = () => {
                             ))}
                         </Grid>
                     </Box>
-                    <h3 className='rightSide-title'> <u>Nail & Spa</u> </h3>
+                    <h3 className='rightSide-title'>Nail & Spa care</h3>
                     <Box data-aos="zoom-in-left" sx={{ flexGrow: 1, mb: '15%' }}>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 3, sm: 3, md: 12 }}>
                             {services.map((service) => (

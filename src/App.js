@@ -12,6 +12,9 @@ import Profile from './pages/user menu/profile/Profile';
 import NotFound from './pages/not found/NotFound';
 import AddService from './pages/addService/AddService';
 import HomeSingleService from './pages/home page/home services/home single service/HomeSingleService';
+import HairSkineCare from './pages/services/hair and skin care/HairSkineCare';
+import NailSpaCare from './pages/services/nail spa care/NailSpaCare';
+import Weeding from './pages/services/wedding/Weeding';
 
 function App() {
   return (
@@ -25,7 +28,11 @@ function App() {
               <PrivateRoute>
                 <Services />
               </PrivateRoute>
-            } />
+            }>
+              <Route path='hairSkinCare' element={<HairSkineCare />} />
+              <Route path='nailSpa' element={<NailSpaCare />} />
+              <Route path='weeding' element={<Weeding />} />
+            </Route>
             <Route path='booking/:serviceId' element={
               <PrivateRoute>
                 <SingleService />

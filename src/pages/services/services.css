@@ -1,0 +1,46 @@
+.page-header{
+    width: 70%;
+    text-align: center;
+    margin: 5% auto;
+}
+
+.page-title{
+    color: rgb(250, 66, 97);
+    text-align: center;
+    margin-top: 5%;
+    font-size: 35px;
+}
+
+.nested-route{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nested-route-link{
+    color: white;
+    padding: 8px;
+    margin-top: 1%;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    margin-right: 1%;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .1s;
+}
+
+.nested-route-link:hover{
+    color: rgb(250, 66, 97);
+    border-bottom: 2px solid rgb(250, 66, 97);
+}
+
+@media only screen and (max-width: 688px) {
+    .page-header{
+        width: 100%;
+    }
+}
+
+/* rgb(250, 66, 97 */

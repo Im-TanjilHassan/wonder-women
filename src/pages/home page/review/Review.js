@@ -40,7 +40,7 @@ const Review = () => {
 
                                         />
                                         <CardContent>
-                                            <Typography gutterBottom variant="h5" component="div">
+                                            <Typography gutterBottom variant="h5" sx={{ color: 'rgb(250, 66, 97)' }} component="div">
                                                 Emma Watson
                                             </Typography>
                                             <Typography sx={{ color: 'white', mb: '8px' }} variant="body2" color="text.secondary">
@@ -66,7 +66,7 @@ const Review = () => {
 
                                         />
                                         <CardContent>
-                                            <Typography gutterBottom variant="h5" component="div">
+                                            <Typography gutterBottom variant="h5" sx={{ color: 'rgb(250, 66, 97)' }} component="div">
                                                 Emma Watson
                                             </Typography>
                                             <Typography sx={{ color: 'white', mb: '8px' }} variant="body2" color="text.secondary">
@@ -92,7 +92,7 @@ const Review = () => {
 
                                         />
                                         <CardContent>
-                                            <Typography gutterBottom variant="h5" component="div">
+                                            <Typography gutterBottom variant="h5" sx={{ color: 'rgb(250, 66, 97)' }} component="div">
                                                 Emma Watson
                                             </Typography>
                                             <Typography sx={{ color: 'white', mb: '8px' }} variant="body2" color="text.secondary">

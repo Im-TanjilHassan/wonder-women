@@ -1,3 +1,15 @@
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: black;
+    border: 2px solid rgb(235, 66, 94);
+    border-radius: 10px;
+    padding: 4%;
+}
+
 .bookingDetail{
     width: 100% !important;
     margin-bottom: 4% !important;
@@ -23,4 +35,10 @@
 .book-btn:hover{
     background-color: rgb(235, 66, 94) !important;
     box-shadow: 0 3px 15px rgba(250, 66, 97, 0.5) !important;
+}
+
+@media only screen and (max-width: 688px) {
+    .modal{
+        width: 90%;
+    }
 }
