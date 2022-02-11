@@ -1,5 +1,5 @@
 .service-card{
-    width: 100%;
+    width: 345px;
     height: 320px;
     opacity: calc(0.7);
     margin-bottom: 12%;
@@ -14,6 +14,6 @@
 
 @media only screen and (max-width:688px) {
     .service-card{
-        width: 350px;
+        width: 150%;
     }
 }

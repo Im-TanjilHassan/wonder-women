@@ -9,7 +9,7 @@ const HomeSingleService = ({ service }) => {
 
     return (
         <Box>
-            <Card className='service-card' sx={{ Width: 345 }}>
+            <Card className='service-card'>
                 <CardActionArea>
                     <CardMedia
                         component="img"

@@ -1,10 +1,13 @@
 import { Container } from '@mui/material';
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { React, useState } from 'react';
+import { Link, Outlet, NavLink } from 'react-router-dom';
 import Navigation from '../shared/navigation/Navigation';
 import './services.css'
 
+
 const Services = () => {
+
+
     return (
         <div>
             <Navigation />
@@ -15,15 +18,21 @@ const Services = () => {
                 </div>
                 <hr />
                 <div className='nested-route'>
-                    <Link to={'/service/hairSkinCare'} className='nested-route-link'>
+                    <NavLink to={'/service/hairSkinCare'} className={({ isActive }) =>
+                        isActive ? 'activeRoute' : 'nested-route-link'
+                    }>
                         <h3>Hair & Skin</h3>
-                    </Link>
-                    <Link to={'/service/nailSpa'} className='nested-route-link'>
+                    </NavLink>
+                    <NavLink to={'/service/nailSpa'} className={({ isActive }) =>
+                        isActive ? 'activeRoute' : 'nested-route-link'
+                    }>
                         <h3>Nail & Spa</h3>
-                    </Link>
-                    <Link to={'/service/weeding'} className='nested-route-link'>
+                    </NavLink>
+                    <NavLink to={'/service/weeding'} className={({ isActive }) =>
+                        isActive ? 'activeRoute' : 'nested-route-link'
+                    }>
                         <h3>Wedding</h3>
-                    </Link>
+                    </NavLink>
                 </div>
                 <Outlet />
             </Container>
