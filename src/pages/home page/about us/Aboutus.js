@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import aboutUs from "../../../images/aboutus/aboutUs.jpg"
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { Link } from 'react-router-dom';
 
 
 const ServiceSample = () => {
@@ -28,7 +29,9 @@ const ServiceSample = () => {
                             <Grid item xs={12} md={6}>
                                 <h3 className='section-subtitle'>Wonder Women</h3>
                                 <p className='aboutText'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quia ipsam natus cum molestiae nihil cumque beatae laborum eum distinctio nam vitae reiciendis est, obcaecati explicabo veritatis blanditiis. Doloremque, repellendus.amet consectetur adipisicing elit. Doloribus quia ipsam natus cum molestiae nihil cumque beatae laborum eum distinctio nam vitae reiciendis est, obcaecati explicabo veritatis blanditiis. Doloremque, repellendus...</p>
-                                <Button className='readmoreBtn' variant='contained'>Read More <i className="fas fa-chevron-right"></i></Button>
+                                <Link style={{ textDecoration: 'none' }} to='/mainaboutus'>
+                                    <Button className='readmoreBtn' variant='contained'>Read More <i className="fas fa-chevron-right"></i></Button>
+                                </Link>
                             </Grid>
                         </Grid>
                     </Box>

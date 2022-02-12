@@ -40,7 +40,7 @@ const HomeService = () => {
                     <h3 className='leftSide-title'>Hair & Skin Care</h3>
                     <Box data-aos="zoom-in-right" sx={{ flexGrow: 1 }}>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 3, sm: 3, md: 12 }}>
-                            {services.map((service) => (
+                            {services.slice(0, 3).map((service) => (
                                 <Grid item xs={2} sm={4} md={4} key={service._id}>
                                     {service.category === "hair and skin care" && (
                                         <Link className='service-link' to={`/booking/${service._id}`}>
@@ -54,7 +54,7 @@ const HomeService = () => {
                     <h3 className='rightSide-title'>Nail & Spa care</h3>
                     <Box data-aos="zoom-in-left" sx={{ flexGrow: 1, mb: '15%' }}>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 3, sm: 3, md: 12 }}>
-                            {services.map((service) => (
+                            {services.slice(3, 6).map((service) => (
                                 <Grid item xs={2} sm={4} md={4} key={service._id}>
                                     {service.category === "nail and spa" && (
                                         <Link className='service-link' to={`/booking/${service._id}`}>

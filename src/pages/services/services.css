@@ -17,6 +17,11 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 4%;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    z-index: 100;
+    padding: 10px 0;
 
 }
 
@@ -59,6 +64,10 @@
 
     .nested-route{
         margin-bottom: 15%;
+        position: sticky;
+        top: 0;
+        background-color: black !important;
+        width: 100%;
     }
 }
 

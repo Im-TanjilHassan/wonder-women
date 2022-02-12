@@ -103,7 +103,7 @@ const Navigation = () => {
                         <Link to='/product' className='menuLink'>
                             <Button className='menuBtn' variant="text">Products</Button>
                         </Link>
-                        <Link to='/about' className='menuLink'>
+                        <Link to='/mainAboutUs' className='menuLink'>
                             <Button className='menuBtn' variant="text">About Us</Button>
                         </Link>
                     </Box>

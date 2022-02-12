@@ -1,6 +1,7 @@
 import { Container } from '@mui/material';
 import { React, useState } from 'react';
 import { Link, Outlet, NavLink } from 'react-router-dom';
+import Footer from '../shared/foother/Footer';
 import Navigation from '../shared/navigation/Navigation';
 import './services.css'
 
@@ -36,6 +37,8 @@ const Services = () => {
                 </div>
                 <Outlet />
             </Container>
+            <hr />
+            <Footer />
         </div>
     );
 };

@@ -15,6 +15,7 @@ import HomeSingleService from './pages/home page/home services/home single servi
 import HairSkineCare from './pages/services/hair and skin care/HairSkineCare';
 import NailSpaCare from './pages/services/nail spa care/NailSpaCare';
 import Weeding from './pages/services/wedding/Weeding';
+import MainAboutUs from './pages/mainAboutUs/MainAboutUs';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
                 <AddService />
               </PrivateRoute>
             } />
+            <Route path='mainAboutUs' element={<MainAboutUs />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
 
